@@ -1,6 +1,8 @@
 class DocsController < ApplicationController
   def index
-    @docs = Document.all
+    @docs = Document.all.map do |doc|
+      doc.title = TODO
+    end
   end
 
   def show

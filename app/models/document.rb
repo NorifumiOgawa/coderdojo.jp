@@ -1,11 +1,12 @@
 class Document
-  attr_reader :id, :version
+  attr_reader :id, :version, :title
   DOCS_PATH = 'db/docs'
 
   class << self
     def all
       Dir.glob("#{DOCS_PATH}/*.md").map do |filename|
-        File.basename(filename, '.*')
+        # File.basename(filename, '.*')
+        Document.new(filename)
       end
     end
   end

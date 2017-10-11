@@ -2,6 +2,7 @@
 <section class='keiyaku'>
   <ul>
     <% @docs.each do |doc| %>
+      <% binding.pry %>
       <li><%= link_to doc, doc_path(doc) %></li>
     <% end %>
   </ul>
